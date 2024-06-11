@@ -1,0 +1,14 @@
+.bg-img {
+    background-image: url(../images/aesthetic-background-with-patterned-glass-texture.jpeg);
+    height: 500px;
+    margin: 35px;
+}
+
+.btn.btn-danger {
+    align-items: left;
+    margin-bottom: baseline;
+}
+
+.bg-red {
+    background-color: red;
+}
