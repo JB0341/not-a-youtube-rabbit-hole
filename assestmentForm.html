@@ -26,115 +26,395 @@
     <section class="container">
         <div class="row">
             <div class="col col-lg-6">
-                <form class="row g-3">
+                <form class="row g-3" id="1">
                     <div class="col-md-6">
                         <label for="inputFirstName4" class="form-label">First Name</label>
-                        <input type="firstName" class="form-control" id="firstName">
+                        <input type="firstName" class="form-control" id="inputFirstName4">
                     </div>
                     <div class="col-md-6">
                         <label for="inputLastName4" class="form-label">Last Name</label>
-                        <input type="lastName" class="form-control" id="lastName">
+                        <input type="lastName" class="form-control" id="inputLastName4">
                     </div>
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email">
+                        <input type="email" class="form-control" id="inputEmail4">
                     </div>
                     <div class="col-md-6">
                         <label for="phoneNumber4" class="form-label">Phone Number</label>
-                        <input type="phoneNumber" class="form-control" id="phone">
+                        <input type="phoneNumber" class="form-control" id="phoneNumber4">
                     </div>
-                    <div class="col-12">
-                        <label for="inputAddress" class="form-label">Address</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                    </div>
-                    <div class="col-12">
-                        <label for="inputAddress2" class="form-label">Address 2</label>
-                        <input type="text" class="form-control" id="inputAddress2"
-                            placeholder="Apartment, studio, or floor">
                     </div>
                     <div class="col-md-6">
                         <label for="inputCity" class="form-label">City</label>
-                        <input type="text" class="form-control" id="inputCity">
+                        <input type="text" class="form-control" id="inputCity" placeholder="City">
                     </div>
                     <div class="col-md-4">
                         <label for="inputState" class="form-label">State</label>
                         <select id="inputState" class="form-select">
-                            <option selected>Choose...</option>
-                            <option>...</option>
+                            <option selected>Select</option>
+                            <option>AK</option>
+                            <option>AL</option>
+                            <option>AR</option>
+                            <option>AZ</option>
+                            <option>CA</option>
+                            <option>CO</option>
+                            <option>CT</option>
+                            <option>DE</option>
+                            <option>FL</option>
+                            <option>GA</option>
+                            <option>HI</option>
+                            <option>IA</option>
+                            <option>ID</option>
+                            <option>IN</option>
+                            <option>KS</option>
+                            <option>KY</option>
+                            <option>LA</option>
+                            <option>MA</option>
+                            <option>MD</option>
+                            <option>ME</option>
+                            <option>MI</option>
+                            <option>MN</option>
+                            <option>MO</option>
+                            <option>MS</option>
+                            <option>MT</option>
+                            <option>NC</option>
+                            <option>ND</option>
+                            <option>NE</option>
+                            <option>NH</option>
+                            <option>NJ</option>
+                            <option>NM</option>
+                            <option>NV</option>
+                            <option>OH</option>
+                            <option>OK</option>
+                            <option>OR</option>
+                            <option>PA</option>
+                            <option>RI</option>
+                            <option>SC</option>
+                            <option>SD</option>
+                            <option>TN</option>
+                            <option>TX</option>
+                            <option>UT</option>
+                            <option>VA</option>
+                            <option>VT</option>
+                            <option>WA</option>
+                            <option>WI</option>
+                            <option>WV</option>
+                            <option>WY</option>
+                            <option>PR</option>
                         </select>
                     </div>
                     <div class="col-md-2">
                         <label for="inputZip" class="form-label">Zip</label>
-                        <input type="text" class="form-control" id="inputZip">
+                        <input type="text" class="form-control">
                     </div>
                     <div class="col-12">
-                        <button type="next" class="btn btn-primary">Next</button>
+                        <button type="next" class="btn btn-primary next-btn">Next</button>
                     </div>
                 </form>
-
-                <!--PageOneForm-->
-                <form class="row g-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Default radio
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Default checked radio
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDisabled" id="flexRadioDisabled"
-                            disabled>
-                        <label class="form-check-label" for="flexRadioDisabled">
-                            Disabled radio
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDisabled" id="flexRadioCheckedDisabled"
-                            checked disabled>
-                        <label class="form-check-label" for="flexRadioCheckedDisabled">
-                            Disabled checked radio
-                        </label>
-                    </div>
-                    <div class="col-12">
-                        <button type="next" class="btn btn-primary">Next</button>
-                    </div>
+                <!--DepressionForm-->
+                <form class="row g-3 d-none" id="2">
+                    <fieldset>
+                        <legend>Depression Test</legend>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">1.Little interest or pleasure in doing things
+                            </label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Not At All</option>
+                                <option>Several Days</option>
+                                <option>More Than Half The Days</option>
+                                <option>Nearly Every Day</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">2.Feeling down, depressed, or hopeless</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Not At All</option>
+                                <option>Several Days</option>
+                                <option>More Than Half The Days</option>
+                                <option>Nearly Every Day</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">3.Trouble falling or staying asleep, or sleeping
+                                too much</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Not At All</option>
+                                <option>Several Days</option>
+                                <option>More Than Half The Days</option>
+                                <option>Nearly Every Day</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">4.Feeling tired or having little energy</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Not At All</option>
+                                <option>Several Days</option>
+                                <option>More Than Half The Days</option>
+                                <option>Nearly Every Day</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">5.Poor appetite or overeating</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Not At All</option>
+                                <option>Several Days</option>
+                                <option>More Than Half The Days</option>
+                                <option>Nearly Every Day</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">6.Feeling bad about yourself- or that you are a
+                                failure or have let yourself or your family down</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Not At All</option>
+                                <option>Several Days</option>
+                                <option>More Than Half The Days</option>
+                                <option>Nearly Every Day</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">7.Trouble concentrating on things, such as
+                                reading the newspaper or watching television</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Not At All</option>
+                                <option>Several Days</option>
+                                <option>More Than Half The Days</option>
+                                <option>Nearly Every Day</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">8.Thoughts that you would be better off dead, or
+                                of hurting yourself.</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Not At All</option>
+                                <option>Several Days</option>
+                                <option>More Than Half The Days</option>
+                                <option>Nearly Every Day</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">9.Moving or speaking so slowly that other people
+                                could have noticed. Or the opposite- being so fidgety or restless that you have been
+                                moving around a lot more than usual.</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Not At All</option>
+                                <option>Several Days</option>
+                                <option>More Than Half The Days</option>
+                                <option>Nearly Every Day</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">10.If you checked off any problems, how difficult
+                                have these problems made it for you at work, home, or with other people?</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Not Difficult at All</option>
+                                <option>Somewhat Difficult</option>
+                                <option>Very Difficult</option>
+                                <option>Extremely Difficult</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <button type="next" class="btn btn-primary next-btn">Next</button>
+                        </div>
+                    </fieldset>
                 </form>
-
-                <!--PageTwoForm-->
-                <form class="row g-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Default radio
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Default checked radio
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDisabled" id="flexRadioDisabled">
-                        <label class="form-check-label" for="flexRadioDisabled">
-                            Disabled radio
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDisabled" id="flexRadioCheckedDisabled"
-                            checked>
-                        <label class="form-check-label" for="flexRadioCheckedDisabled">
-                            Disabled checked radio
-                        </label>
-                    </div>
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
+                <!--PTSDForm-->
+                <form class="row g-3 d-none" id="3">
+                    <fieldset>
+                        <legend>PTSD Test</legend>
+                        <h6>In the past month have you…</h6>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">1.Had nightmares about the event(s) or thought about the event(s) when you did not want to?</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">2.Tried hard not to think about the event(s) or went out of your 
+                                way to avoid situations that reminded you of the event(s)?</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">3.Been constantly on guard, watchful, or easily startled?</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">4.Felt numb or detached from people, activities, or your surroundings?</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">5.Felt guilty or unable to stop blaming yourself or others for 
+                                the event(s) or any problems the event(s) may have caused?</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary next-btn">Next</button>
+                        </div>
+                    </fieldset>
+                </form>
+                <!--AnxietyForm-->
+                <form class="row g-3 d-none" id="4">
+                    <fieldset>
+                        <legend>Anxiety Test</legend>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">1.Feeling nervous, anxious, or on edge.</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Not At All</option>
+                                <option>Several Days</option>
+                                <option>More Than Half The Days</option>
+                                <option>Nearly Every Day</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">2.Not being able to stop or control worrying.</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Not At All</option>
+                                <option>Several Days</option>
+                                <option>More Than Half The Days</option>
+                                <option>Nearly Every Day</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">3.Worrying too much about different things.</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Not At All</option>
+                                <option>Several Days</option>
+                                <option>More Than Half The Days</option>
+                                <option>Nearly Every Day</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">4.Trouble relaxing.</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Not At All</option>
+                                <option>Several Days</option>
+                                <option>More Than Half The Days</option>
+                                <option>Nearly Every Day</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">5.Being so restless that it is hard to sit still.</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Not At All</option>
+                                <option>Several Days</option>
+                                <option>More Than Half The Days</option>
+                                <option>Nearly Every Day</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">6.Becoming easily annoyed or irritable.</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Not At All</option>
+                                <option>Several Days</option>
+                                <option>More Than Half The Days</option>
+                                <option>Nearly Every Day</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">7.Feeling afraid, as if something awful might happen.</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Not At All</option>
+                                <option>Several Days</option>
+                                <option>More Than Half The Days</option>
+                                <option>Nearly Every Day</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary next-btn">Next</button>
+                        </div>
+                    </fieldset>
+                </form>
+                <!--AddictionForm-->
+                <form class="row g-3 d-none" id="5">
+                    <fieldset>
+                        <legend>Addiction Test</legend>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">1.Have you ever felt that you ought to cut down on your drinking or drug use?</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">2.Have people annoyed you by criticizing your drinking or drug use?</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">3.Have you ever felt bad or guilty about your drinking or drug use?</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">4.Have  you ever had a drink or used drugs first think in the morning to steady your nerves or to get rid of a hangover?</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enableSelect" class="form-label">5.What substance or addiction are you concerned about? Select all that apply.</label>
+                            <select id="enableSelect" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Alcohol</option>
+                                <option>Tobacco</option>
+                                <option>Marijuana</option>
+                                <option>Cocaine/Crack</option>
+                                <option>Heroin</option>
+                                <option>Prescription Opioids</option>
+                                <option>Stimulants(e.g. Speed, Meth, Prescription Stims)</option>
+                                <option>Benzodiazepines(e.g. Xanax, Valium)</option>
+                                <option>Self-harm</option>
+                                <option>Other(e.g. Gambling, sex, internet, shopping, food, etc.)</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary next-btn">Submit</button>
+                        </div>
+                    </fieldset>
                 </form>
             </div>
         </div>

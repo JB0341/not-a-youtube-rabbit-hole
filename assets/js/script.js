@@ -1,3 +1,4 @@
+let currentDataId = 1;
 
 async function getDoc(searchTerm, location) {
     const searchTermEncoded = encodeURIComponent(searchTerm);
@@ -27,3 +28,21 @@ async function getDoc(searchTerm, location) {
 }
 
 getDoc('health clinic', 'new york');
+
+
+
+//form next dynamic page for submit
+$('.next-btn').on('click', function(event) {
+    event.preventDefault();
+    if (currentDataId === 5) {
+        console.log('Thank You For Submitting');
+        
+        return;
+    };
+
+    $(`#${currentDataId}`).addClass('d-none');
+    currentDataId++;
+    $(`#${currentDataId}`).removeClass('d-none');
+    console.log(currentDataId);
+    
+});
