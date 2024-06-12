@@ -18,7 +18,7 @@ async function getDoc(searchTerm, location) {
         const response = await fetch(url, options);
         const result = await response.text();
 
-        
+        renderYelp(result);
 
         console.log(result);
     } catch (error) {
@@ -27,9 +27,12 @@ async function getDoc(searchTerm, location) {
     
 }
 
+function getInfo(searchType) {
+
+}
 // getDoc('health clinic', 'new york');
 
-function render() {
+function renderYelp(result) {
 
     // let info = JSON.parse(localStorage.getItem("?"))|| []
 
@@ -52,15 +55,17 @@ function init() {
     
     const urlParams = new URLSearchParams(window.location.search);
     
-    const searchType = urlParams.get('searchType');
-    const searchLocation = urlParams.get('searchLocation');
+    const searchType = urlParams.get('searchType'); // depression, anxiety, etc
+    const searchLocation = urlParams.get('searchLocation'); // city name or zipcode
     
     if (!searchType || !searchLocation) {
-        window.location.replace('../../index.html');
+        // window.location.replace('../../index.html');
+        console.log('no params')
+        return;
     }
 
-    
-
+    getDoc(searchType, searchLocation)
+    getInfo(searchType);
 };
 
 init();

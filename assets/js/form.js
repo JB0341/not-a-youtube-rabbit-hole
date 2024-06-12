@@ -71,6 +71,14 @@ $('.next-btn').on('click', function (event) {
         const arrOfAddiction = [addiction1, addiction2, addiction3, addiction4, addiction5];
         const totalAddictionValue = 0;
 
+
+        const searchType = 'depression';
+        const searchLocation = 'New York';
+
+        // move user to results page with the two params
+        const queryString = `./results.html?searchType=${searchType}&searchLocation=${searchLocation}`;
+
+        location.assign(queryString);
     };
 
 
