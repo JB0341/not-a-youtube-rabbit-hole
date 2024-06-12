@@ -1,9 +1,19 @@
-const clientData = JSON.parse(localStorage.getItem(clientData)) || [];
 
 
 
 
+$('.next-btn').on('click', function(event) {
+    event.preventDefault();
+    if (currentDataId === 5) {
+        console.log('Thank You For Submitting');
+    };
 
+    $(`#${currentDataId}`).addClass('d-none');
+    currentDataId++;
+    $(`#${currentDataId}`).removeClass('d-none');
+    console.log(currentDataId);
+    
+});
 
 
 
@@ -11,6 +21,7 @@ const clientData = JSON.parse(localStorage.getItem(clientData)) || [];
 
 function addClientData (event) {
     event.preventDefault();
+    const clientData = JSON.parse(localStorage.getItem('clientData')) || [];
     if (!clientData) {
         clientData = [];
     }
@@ -34,5 +45,5 @@ function addClientData (event) {
 
 
 $(document).ready(function () {
+    $("#add-assessment").on('submit', addClientData);
 })
-$("#add-assessment").on('submit', addClientData);
