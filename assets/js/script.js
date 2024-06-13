@@ -1,48 +1,39 @@
-let currentDataId = 1;
-
-async function getDoc(searchTerm, location) {
-    const searchTermEncoded = encodeURIComponent(searchTerm);
-    const locationEncoded = encodeURIComponent(location);
-
-    const url = `https://yelp-business-api.p.rapidapi.com/search?query=${searchTermEncoded}&location=${locationEncoded}&page=1`;
-
-    const options = {
-        method: 'GET',
-        headers: {
-            'x-rapidapi-key': 'a4b9d7bc0bmshf9dce26bf58e4afp19b67ejsnce794ff3e500',
-            'x-rapidapi-host': 'yelp-business-api.p.rapidapi.com'
-        }
-    };
-    
-    try {
-        const response = await fetch(url, options);
-        const result = await response.text();
-
-        
-
-        console.log(result);
-    } catch (error) {
-        console.error(error);
-    }
-    
-}
-
-getDoc('health clinic', 'new york');
-
-
+//let currentDataId = 1;
 
 //form next dynamic page for submit
-$('.next-btn').on('click', function(event) {
-    event.preventDefault();
-    if (currentDataId === 5) {
-        console.log('Thank You For Submitting');
-        
-        return;
-    };
+//$('.next-btn').on('click', function(event) {
+//event.preventDefault();
+//if (currentDataId === 5) {
+//     console.log('Thank You For Submitting');
 
-    $(`#${currentDataId}`).addClass('d-none');
-    currentDataId++;
-    $(`#${currentDataId}`).removeClass('d-none');
-    console.log(currentDataId);
-    
+//    return;
+//  };
+
+//  $(`#${currentDataId}`).addClass('d-none');
+//  currentDataId++;
+//  $(`#${currentDataId}`).removeClass('d-none');
+//  console.log(currentDataId);
+
+//});
+
+$(document).ready(function () {
+   $("#call1").click(function () {
+      alert("1-800-273-8255");
+   });
+
+   $('#tabclick').click(function () {
+      window.open('https://www.tn.gov/behavioral-health/substance-abuse-services/treatment---recovery/treatment---recovery/prescription-for-success/warning-signs-of-drug-abuse.html', '_blank');
+   });
+
+   $('#tabclick1').click(function () {
+      window.open('https://smartrecovery.org/', '_blank');
+   });
+
+   $('#tabclick2').click(function () {
+      window.open('https://www.dea.gov/recovery-resources', '_blank');
+   });
+   
+   $('#tabclick3').click(function () {
+      window.open('https://www.samhsa.gov/', '_blank');
+   });
 });

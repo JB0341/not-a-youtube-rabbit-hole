@@ -74,6 +74,14 @@
             const avgAddiction = totalAddictionValue / 5;
 
             overallScore = 0;
+
+            const searchType = 'depression';
+            const searchLocation = 'New York';
+    
+            // move user to results page with the two params
+            const queryString = `./results.html?searchType=${searchType}&searchLocation=${searchLocation}`;
+    
+            location.assign(queryString);
         };
 
         console.log('FORM', currentDataId);

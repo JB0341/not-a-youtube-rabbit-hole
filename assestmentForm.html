@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -15,427 +15,483 @@
 </head>
 
 
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="./assets/images/Prj1.svg" alt="Logo" width="85" height="30"
-                        class="d-inline-block align-text-top">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        <a class="nav-link" href="#">Assesment</a>
-                        <a class="nav-link" href="#">Mood</a>
-                    </div>
+<body class="d-flex flex-column vh-100">
+    <div class="col-xl-11 mx-auto p-5 py-lg-9">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <img src="./assets/images/Prj1.svg" alt="Logo" width="85" height="30"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"></svg>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="./index.html" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="./assestmentForm.html" class="nav-link">Assessment</a></li>
+            </ul>
+        </header>
+        <section class="position-relative overflow-hidden p-md-4 m-md-4">
+            <div class="p-5 bg-prim1 text-black text-center">
+                <h1>Welcome to Levare Assessment</h1>
+                <h4>The Best Place to Heal</h4>
+            </div>
+        </section>
+        <!--IntroForm-->
+        <main>
+            <div class="d-flex flex-column vh-100">
+                <div class="col-9" style="background-color: rgb(255, 255, 255);">
+                    <section class="container">
+                        <div class="row">
+                            <div class="col col-lg-6">
+                                <form class="row g-3" id="form1">
+                                    <div class="col-md-6">
+                                        <label for="inputFirstName4" class="form-label">First Name</label>
+                                        <input type="firstName" class="form-control" id="inputFirstName4">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="inputLastName4" class="form-label">Last Name</label>
+                                        <input type="lastName" class="form-control" id="inputLastName4">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="inputEmail4" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="inputEmail4">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phoneNumber4" class="form-label">Phone Number</label>
+                                        <input type="phoneNumber" class="form-control" id="phoneNumber4">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="inputCity" class="form-label">City</label>
+                                        <input type="text" class="form-control" id="inputCity" placeholder="City">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="inputState" class="form-label">State</label>
+                                        <select id="inputState" class="form-select">
+                                            <option selected disabled>Select</option>
+                                            <option>AK</option>
+                                            <option>AL</option>
+                                            <option>AR</option>
+                                            <option>AZ</option>
+                                            <option>CA</option>
+                                            <option>CO</option>
+                                            <option>CT</option>
+                                            <option>DE</option>
+                                            <option>FL</option>
+                                            <option>GA</option>
+                                            <option>HI</option>
+                                            <option>IA</option>
+                                            <option>ID</option>
+                                            <option>IN</option>
+                                            <option>KS</option>
+                                            <option>KY</option>
+                                            <option>LA</option>
+                                            <option>MA</option>
+                                            <option>MD</option>
+                                            <option>ME</option>
+                                            <option>MI</option>
+                                            <option>MN</option>
+                                            <option>MO</option>
+                                            <option>MS</option>
+                                            <option>MT</option>
+                                            <option>NC</option>
+                                            <option>ND</option>
+                                            <option>NE</option>
+                                            <option>NH</option>
+                                            <option>NJ</option>
+                                            <option>NM</option>
+                                            <option>NV</option>
+                                            <option>OH</option>
+                                            <option>OK</option>
+                                            <option>OR</option>
+                                            <option>PA</option>
+                                            <option>RI</option>
+                                            <option>SC</option>
+                                            <option>SD</option>
+                                            <option>TN</option>
+                                            <option>TX</option>
+                                            <option>UT</option>
+                                            <option>VA</option>
+                                            <option>VT</option>
+                                            <option>WA</option>
+                                            <option>WI</option>
+                                            <option>WV</option>
+                                            <option>WY</option>
+                                            <option>PR</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label for="inputZip" class="form-label">Zip</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-12">
+                                        <br />
+                                        <button type="next" class="btn btn-primary next-btn">Next</button>
+                                    </div>
+                                </form>
+                                <!--DepressionForm-->
+                                <form class="row g-3 d-none" id="form2">
+                                    <fieldset>
+                                        <legend>Depression Test</legend>
+                                        <div class="mb-3">
+                                            <label for="dep1" class="form-label">1.Little interest or pleasure in doing
+                                                things
+                                            </label>
+                                            <select id="dep1" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Not At All</option>
+                                                <option value="2">Several Days</option>
+                                                <option value="3">More Than Half The Days</option>
+                                                <option value="4">Nearly Every Day</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="dep2" class="form-label">2.Feeling down, depressed, or
+                                                hopeless</label>
+                                            <select id="dep2" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Not At All</option>
+                                                <option value="2">Several Days</option>
+                                                <option value="3">More Than Half The Days</option>
+                                                <option value="4">Nearly Every Day</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="dep3" class="form-label">3.Trouble falling or staying asleep, or
+                                                sleeping
+                                                too much</label>
+                                            <select id="dep3" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Not At All</option>
+                                                <option value="2">Several Days</option>
+                                                <option value="3">More Than Half The Days</option>
+                                                <option value="4"> Nearly Every Day</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="dep4" class="form-label">4.Feeling tired or having little
+                                                energy</label>
+                                            <select id="dep4" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Not At All</option>
+                                                <option value="2">Several Days</option>
+                                                <option value="3">More Than Half The Days</option>
+                                                <option value="4">Nearly Every Day</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="dep5" class="form-label">5.Poor appetite or overeating</label>
+                                            <select id="dep5" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Not At All</option>
+                                                <option value="2">Several Days</option>
+                                                <option value="3">More Than Half The Days</option>
+                                                <option value="4">Nearly Every Day</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="dep6" class="form-label">6.Feeling bad about yourself- or that
+                                                you
+                                                are a
+                                                failure or have let yourself or your family down</label>
+                                            <select id="dep6" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Not At All</option>
+                                                <option value="2">Several Days</option>
+                                                <option value="3">More Than Half The Days</option>
+                                                <option value="4">Nearly Every Day</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="dep7" class="form-label">7.Trouble concentrating on things, such
+                                                as
+                                                reading the newspaper or watching television</label>
+                                            <select id="dep7" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Not At All</option>
+                                                <option value="2">Several Days</option>
+                                                <option value="3">More Than Half The Days</option>
+                                                <option value="4">Nearly Every Day</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="dep8" class="form-label">8.Thoughts that you would be better off
+                                                dead, or
+                                                of hurting yourself.</label>
+                                            <select id="dep8" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Not At All</option>
+                                                <option value="2">Several Days</option>
+                                                <option value="3">More Than Half The Days</option>
+                                                <option value="4">Nearly Every Day</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="dep9" class="form-label">9.Moving or speaking so slowly that
+                                                other
+                                                people
+                                                could have noticed. Or the opposite- being so fidgety or restless that
+                                                you
+                                                have been
+                                                moving around a lot more than usual.</label>
+                                            <select id="dep9" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Not At All</option>
+                                                <option value="2">Several Days</option>
+                                                <option value="3">More Than Half The Days</option>
+                                                <option value="4">Nearly Every Day</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="dep10" class="form-label">10.If you checked off any problems,
+                                                how
+                                                difficult
+                                                have these problems made it for you at work, home, or with other
+                                                people?</label>
+                                            <select id="dep10" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Not Difficult at All</option>
+                                                <option value="2">Somewhat Difficult</option>
+                                                <option value="3">Very Difficult</option>
+                                                <option value="4">Extremely Difficult</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="next" class="btn btn-primary next-btn">Next</button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                                <!--PTSDForm-->
+                                <form class="row g-3 d-none" id="form3">
+                                    <fieldset>
+                                        <legend>PTSD Test</legend>
+                                        <h6>In the past month have you…</h6>
+                                        <div class="mb-3">
+                                            <label for="ptsd1" class="form-label">1.Had nightmares about the event(s) or
+                                                thought about the event(s) when you did not want to?</label>
+                                            <select id="ptsd1" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Yes</option>
+                                                <option value="2">No</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="ptsd2" class="form-label">2.Tried hard not to think about the
+                                                event(s) or went out of your
+                                                way to avoid situations that reminded you of the event(s)?</label>
+                                            <select id="ptsd2" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Yes</option>
+                                                <option value="2">No</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="ptsd3" class="form-label">3.Been constantly on guard, watchful,
+                                                or
+                                                easily startled?</label>
+                                            <select id="ptsd3" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Yes</option>
+                                                <option value="2">No</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="ptsd4" class="form-label">4.Felt numb or detached from people,
+                                                activities, or your surroundings?</label>
+                                            <select id="ptsd4" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Yes</option>
+                                                <option value="2">No</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="ptsd5" class="form-label">5.Felt guilty or unable to stop
+                                                blaming
+                                                yourself or others for
+                                                the event(s) or any problems the event(s) may have caused?</label>
+                                            <select id="ptsd5" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Yes</option>
+                                                <option value="2">No</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary next-btn">Next</button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                                <!--AnxietyForm-->
+                                <form class="row g-3 d-none" id="form4">
+                                    <fieldset>
+                                        <legend>Anxiety Test</legend>
+                                        <div class="mb-3">
+                                            <label for="anxiety1" class="form-label">1.Feeling nervous, anxious, or on
+                                                edge.</label>
+                                            <select id="anxiety1" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Not At All</option>
+                                                <option value="2">Several Days</option>
+                                                <option value="3">More Than Half The Days</option>
+                                                <option value="4">Nearly Every Day</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="anxiety2" class="form-label">2.Not being able to stop or control
+                                                worrying.</label>
+                                            <select id="anxiety2" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Not At All</option>
+                                                <option value="2">Several Days</option>
+                                                <option value="3">More Than Half The Days</option>
+                                                <option value="4">Nearly Every Day</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="anxiety3" class="form-label">3.Worrying too much about different
+                                                things.</label>
+                                            <select id="anxiety3" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Not At All</option>
+                                                <option value="2">Several Days</option>
+                                                <option value="3">More Than Half The Days</option>
+                                                <option value="4">Nearly Every Day</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="anxiety4" class="form-label">4.Trouble relaxing.</label>
+                                            <select id="anxiety4" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Not At All</option>
+                                                <option value="2">Several Days</option>
+                                                <option value="3">More Than Half The Days</option>
+                                                <option value="4">Nearly Every Day</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="anxiety5" class="form-label">5.Being so restless that it is hard
+                                                to
+                                                sit still.</label>
+                                            <select id="anxiety5" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Not At All</option>
+                                                <option value="2">Several Days</option>
+                                                <option value="3">More Than Half The Days</option>
+                                                <option value="4">Nearly Every Day</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="anxiety6" class="form-label">6.Becoming easily annoyed or
+                                                irritable.</label>
+                                            <select id="anxiety6" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Not At All</option>
+                                                <option value="2">Several Days</option>
+                                                <option value="3">More Than Half The Days</option>
+                                                <option value="4">Nearly Every Day</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="anxiety7" class="form-label">7.Feeling afraid, as if something
+                                                awful
+                                                might happen.</label>
+                                            <select id="enableSelect" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Not At All</option>
+                                                <option value="2">Several Days</option>
+                                                <option value="3">More Than Half The Days</option>
+                                                <option value="4">Nearly Every Day</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary next-btn">Next</button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                                <!--AddictionForm-->
+                                <form class="row g-3 d-none" id="form5">
+                                    <fieldset>
+                                        <legend>Addiction Test</legend>
+                                        <div class="mb-3">
+                                            <label for="addiction1" class="form-label">1.Have you ever felt that you
+                                                ought
+                                                to cut down on your drinking or drug use?</label>
+                                            <select id="addiction1" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Yes</option>
+                                                <option value="2">No</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="addiction2" class="form-label">2.Have people annoyed you by
+                                                criticizing your drinking or drug use?</label>
+                                            <select id="addiction2" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Yes</option>
+                                                <option value="2">No</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="addiction3" class="form-label">3.Have you ever felt bad or
+                                                guilty
+                                                about your drinking or drug use?</label>
+                                            <select id="addiction3" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Yes</option>
+                                                <option value="2">No</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="addiction4" class="form-label">4.Have you ever had a drink or
+                                                used
+                                                drugs first think in the morning to steady your nerves or to get rid of
+                                                a
+                                                hangover?</label>
+                                            <select id="addiction4" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Yes</option>
+                                                <option value="2">No</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="addiction5" class="form-label">5.What substance or addiction are
+                                                you
+                                                concerned about? Select all that apply.</label>
+                                            <select id="addiction5" class="form-select">
+                                                <option selected disabled>Choose...</option>
+                                                <option value="1">Alcohol</option>
+                                                <option value="2">Tobacco</option>
+                                                <option value="3">Marijuana</option>
+                                                <option value="4">Cocaine/Crack</option>
+                                                <option value="5">Heroin</option>
+                                                <option value="6">Prescription Opioids</option>
+                                                <option value="7">Stimulants(e.g. Speed, Meth, Prescription Stims)
+                                                </option>
+                                                <option value="8">Benzodiazepines(e.g. Xanax, Valium)</option>
+                                                <option value="9">Self-harm</option>
+                                                <option value="10">Other(e.g. Gambling, sex, internet, shopping, food,
+                                                    etc.)
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary next-btn">Submit</button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
-        </nav>
-    </header>
-    <!--IntroForm-->
-    <section class="container">
-        <div class="row">
-            <div class="col col-lg-6">
-                <form class="row g-3" id="form1">
-                    <div class="col-md-6">
-                        <label for="inputFirstName4" class="form-label">First Name</label>
-                        <input type="firstName" class="form-control" id="inputFirstName4">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="inputLastName4" class="form-label">Last Name</label>
-                        <input type="lastName" class="form-control" id="inputLastName4">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="inputEmail4" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="phoneNumber4" class="form-label">Phone Number</label>
-                        <input type="phoneNumber" class="form-control" id="phoneNumber4">
-                    </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="inputCity" class="form-label">City</label>
-                        <input type="text" class="form-control" id="inputCity" placeholder="City">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="inputState" class="form-label">State</label>
-                        <select id="inputState" class="form-select">
-                            <option selected>Select</option>
-                            <option>AK</option>
-                            <option>AL</option>
-                            <option>AR</option>
-                            <option>AZ</option>
-                            <option>CA</option>
-                            <option>CO</option>
-                            <option>CT</option>
-                            <option>DE</option>
-                            <option>FL</option>
-                            <option>GA</option>
-                            <option>HI</option>
-                            <option>IA</option>
-                            <option>ID</option>
-                            <option>IN</option>
-                            <option>KS</option>
-                            <option>KY</option>
-                            <option>LA</option>
-                            <option>MA</option>
-                            <option>MD</option>
-                            <option>ME</option>
-                            <option>MI</option>
-                            <option>MN</option>
-                            <option>MO</option>
-                            <option>MS</option>
-                            <option>MT</option>
-                            <option>NC</option>
-                            <option>ND</option>
-                            <option>NE</option>
-                            <option>NH</option>
-                            <option>NJ</option>
-                            <option>NM</option>
-                            <option>NV</option>
-                            <option>OH</option>
-                            <option>OK</option>
-                            <option>OR</option>
-                            <option>PA</option>
-                            <option>RI</option>
-                            <option>SC</option>
-                            <option>SD</option>
-                            <option>TN</option>
-                            <option>TX</option>
-                            <option>UT</option>
-                            <option>VA</option>
-                            <option>VT</option>
-                            <option>WA</option>
-                            <option>WI</option>
-                            <option>WV</option>
-                            <option>WY</option>
-                            <option>PR</option>
-                        </select>
-                    </div>
-                    <div class="col-md-2">
-                        <label for="inputZip" class="form-label">Zip</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="col-12">
-                        <button type="next" class="btn btn-primary next-btn">Next</button>
-                    </div>
-                </form>
-                <!--DepressionForm-->
-                <form class="row g-3 d-none" id="form2">
-                    <fieldset>
-                        <legend>Depression Test</legend>
-                        <div class="mb-3">
-                            <label for="dep1" class="form-label">1.Little interest or pleasure in doing things
-                            </label>
-                            <select id="dep1" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Not At All</option>
-                                <option value="2">Several Days</option>
-                                <option value="3">More Than Half The Days</option>
-                                <option value="4">Nearly Every Day</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="dep2" class="form-label">2.Feeling down, depressed, or hopeless</label>
-                            <select id="dep2" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Not At All</option>
-                                <option value="2">Several Days</option>
-                                <option value="3">More Than Half The Days</option>
-                                <option value="4">Nearly Every Day</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="dep3" class="form-label">3.Trouble falling or staying asleep, or sleeping
-                                too much</label>
-                            <select id="dep3" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Not At All</option>
-                                <option value="2">Several Days</option>
-                                <option value="3">More Than Half The Days</option>
-                                <option value="4"> Nearly Every Day</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="dep4" class="form-label">4.Feeling tired or having little energy</label>
-                            <select id="dep4" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Not At All</option>
-                                <option value="2">Several Days</option>
-                                <option value="3">More Than Half The Days</option>
-                                <option value="4">Nearly Every Day</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="dep5" class="form-label">5.Poor appetite or overeating</label>
-                            <select id="dep5" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Not At All</option>
-                                <option value="2">Several Days</option>
-                                <option value="3">More Than Half The Days</option>
-                                <option value="4">Nearly Every Day</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="dep6" class="form-label">6.Feeling bad about yourself- or that you are a
-                                failure or have let yourself or your family down</label>
-                            <select id="dep6" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Not At All</option>
-                                <option value="2">Several Days</option>
-                                <option value="3">More Than Half The Days</option>
-                                <option value="4">Nearly Every Day</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="dep7" class="form-label">7.Trouble concentrating on things, such as
-                                reading the newspaper or watching television</label>
-                            <select id="dep7" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Not At All</option>
-                                <option value="2">Several Days</option>
-                                <option value="3">More Than Half The Days</option>
-                                <option value="4">Nearly Every Day</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="dep8" class="form-label">8.Thoughts that you would be better off dead, or
-                                of hurting yourself.</label>
-                            <select id="dep8" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Not At All</option>
-                                <option value="2">Several Days</option>
-                                <option value="3">More Than Half The Days</option>
-                                <option value="4">Nearly Every Day</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="dep9" class="form-label">9.Moving or speaking so slowly that other people
-                                could have noticed. Or the opposite- being so fidgety or restless that you have been
-                                moving around a lot more than usual.</label>
-                            <select id="dep9" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Not At All</option>
-                                <option value="2">Several Days</option>
-                                <option value="3">More Than Half The Days</option>
-                                <option value="4">Nearly Every Day</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="dep10" class="form-label">10.If you checked off any problems, how difficult
-                                have these problems made it for you at work, home, or with other people?</label>
-                            <select id="dep10" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Not Difficult at All</option>
-                                <option value="2">Somewhat Difficult</option>
-                                <option value="3">Very Difficult</option>
-                                <option value="4">Extremely Difficult</option>
-                            </select>
-                        </div>
-                        <div class="col-12">
-                            <button type="next" class="btn btn-primary next-btn">Next</button>
-                        </div>
-                    </fieldset>
-                </form>
-                <!--PTSDForm-->
-                <form class="row g-3 d-none" id="form3">
-                    <fieldset>
-                        <legend>PTSD Test</legend>
-                        <h6>In the past month have you…</h6>
-                        <div class="mb-3">
-                            <label for="ptsd1" class="form-label">1.Had nightmares about the event(s) or thought about the event(s) when you did not want to?</label>
-                            <select id="ptsd1" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Yes</option>
-                                <option value="2">No</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="ptsd2" class="form-label">2.Tried hard not to think about the event(s) or went out of your 
-                                way to avoid situations that reminded you of the event(s)?</label>
-                            <select id="ptsd2" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Yes</option>
-                                <option value="2">No</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="ptsd3" class="form-label">3.Been constantly on guard, watchful, or easily startled?</label>
-                            <select id="ptsd3" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Yes</option>
-                                <option value="2">No</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="ptsd4" class="form-label">4.Felt numb or detached from people, activities, or your surroundings?</label>
-                            <select id="ptsd4" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Yes</option>
-                                <option value="2">No</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="ptsd5" class="form-label">5.Felt guilty or unable to stop blaming yourself or others for 
-                                the event(s) or any problems the event(s) may have caused?</label>
-                            <select id="ptsd5" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Yes</option>
-                                <option value="2">No</option>
-                            </select>
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary next-btn">Next</button>
-                        </div>
-                    </fieldset>
-                </form>
-                <!--AnxietyForm-->
-                <form class="row g-3 d-none" id="form4">
-                    <fieldset>
-                        <legend>Anxiety Test</legend>
-                        <div class="mb-3">
-                            <label for="anxiety1" class="form-label">1.Feeling nervous, anxious, or on edge.</label>
-                            <select id="anxiety1" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Not At All</option>
-                                <option value="2">Several Days</option>
-                                <option value="3">More Than Half The Days</option>
-                                <option value="4">Nearly Every Day</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="anxiety2" class="form-label">2.Not being able to stop or control worrying.</label>
-                            <select id="anxiety2" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Not At All</option>
-                                <option value="2">Several Days</option>
-                                <option value="3">More Than Half The Days</option>
-                                <option value="4">Nearly Every Day</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="anxiety3" class="form-label">3.Worrying too much about different things.</label>
-                            <select id="anxiety3" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Not At All</option>
-                                <option value="2">Several Days</option>
-                                <option value="3">More Than Half The Days</option>
-                                <option value="4">Nearly Every Day</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="anxiety4" class="form-label">4.Trouble relaxing.</label>
-                            <select id="anxiety4" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Not At All</option>
-                                <option value="2">Several Days</option>
-                                <option value="3">More Than Half The Days</option>
-                                <option value="4">Nearly Every Day</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="anxiety5" class="form-label">5.Being so restless that it is hard to sit still.</label>
-                            <select id="anxiety5" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Not At All</option>
-                                <option value="2">Several Days</option>
-                                <option value="3">More Than Half The Days</option>
-                                <option value="4">Nearly Every Day</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="anxiety6" class="form-label">6.Becoming easily annoyed or irritable.</label>
-                            <select id="anxiety6" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Not At All</option>
-                                <option value="2">Several Days</option>
-                                <option value="3">More Than Half The Days</option>
-                                <option value="4">Nearly Every Day</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="anxiety7" class="form-label">7.Feeling afraid, as if something awful might happen.</label>
-                            <select id="enableSelect" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Not At All</option>
-                                <option value="2">Several Days</option>
-                                <option value="3">More Than Half The Days</option>
-                                <option value="4">Nearly Every Day</option>
-                            </select>
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary next-btn">Next</button>
-                        </div>
-                    </fieldset>
-                </form>
-                <!--AddictionForm-->
-                <form class="row g-3 d-none" id="form5">
-                    <fieldset>
-                        <legend>Addiction Test</legend>
-                        <div class="mb-3">
-                            <label for="addiction1" class="form-label">1.Have you ever felt that you ought to cut down on your drinking or drug use?</label>
-                            <select id="addiction1" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Yes</option>
-                                <option value="2">No</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="addiction2" class="form-label">2.Have people annoyed you by criticizing your drinking or drug use?</label>
-                            <select id="addiction2" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Yes</option>
-                                <option value="2">No</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="addiction3" class="form-label">3.Have you ever felt bad or guilty about your drinking or drug use?</label>
-                            <select id="addiction3" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Yes</option>
-                                <option value="2">No</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="addiction4" class="form-label">4.Have  you ever had a drink or used drugs first think in the morning to steady your nerves or to get rid of a hangover?</label>
-                            <select id="addiction4" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Yes</option>
-                                <option value="2">No</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="addiction5" class="form-label">5.What substance or addiction are you concerned about? Select all that apply.</label>
-                            <select id="addiction5" class="form-select">
-                                <option selected disabled>Choose...</option>
-                                <option value="1">Alcohol</option>
-                                <option value="2">Tobacco</option>
-                                <option value="3">Marijuana</option>
-                                <option value="4">Cocaine/Crack</option>
-                                <option value="5">Heroin</option>
-                                <option value="6">Prescription Opioids</option>
-                                <option value="7">Stimulants(e.g. Speed, Meth, Prescription Stims)</option>
-                                <option value="8">Benzodiazepines(e.g. Xanax, Valium)</option>
-                                <option value="9">Self-harm</option>
-                                <option value="10">Other(e.g. Gambling, sex, internet, shopping, food, etc.)</option>
-                            </select>
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary next-btn">Submit</button>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
+        </main>
+
+        <footer>
+			<nav class="navbar d-block px-3 py-2 bg-body-tertiary">
+				<div class="container-fluid">
+					<a class="navbar-brand text-black text-decoration-none">Levare</a>
+				</div>
+			</nav>
+		</footer>
+        <div class="d-block bl-1 px-3 py-2 text-center text-bold">
+            <a class="text-white text-decoration-none">Live For Your Life!</a>
         </div>
-        </div>
-    </section>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
