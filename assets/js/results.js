@@ -20,7 +20,6 @@ async function getDoc(searchTerm, location) {
 
         renderYelp(result);
 
-        console.log(result);
     } catch (error) {
         console.error(error);
     }
@@ -33,6 +32,7 @@ function getInfo(searchType) {
 // getDoc('health clinic', 'new york');
 
 function renderYelp(result) {
+    console.log(result);
 
     // let info = JSON.parse(localStorage.getItem("?"))|| []
 
