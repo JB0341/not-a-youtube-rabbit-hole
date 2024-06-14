@@ -675,25 +675,39 @@ function getInfo(searchType) {
     const url = `https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${searchType}`
 
 }
-getDoc('health clinic', 'new york');
 
 function renderYelp(result) {
     console.log(result);
+    // result.SearchResults
 
-    // let info = JSON.parse(localStorage.getItem("?"))|| []
+    for (let i = 0; i < 3; i++) {
+        const data = result.SearchResults[i];
 
-    // ?fixing jquery
+        const div = `
+        <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">${data.name}</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">${data.rating}<small class="text-muted fw-light"></small>
+                    </h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>${data.priceRange}</li>
+                        <li>${data.name}</li>
+                        <li>${data.reviewCount}</li>
+                        <li>${data.phone}</li>
+                    </ul>
+                    <a href="${data.businessURL}" target="_blank">
+                        <button type="button" class="w-100 btn btn-lg btn-primary">Go To Website</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        `;
 
-    //     const ?= `
-    //     <div>
-    //         <row>
-    //             <h2>${firstName.title}</h2>
-    //             <h3>${depression.title}</h3>
-    //             <h3>${postTram.title}</h3>
-    //             <h3>${Anxiety.title}</h3>
-    //             <h3>${Addiction.title}</h3>
-    //         <row>
-    //     </div>`
+        $('#yelp-container').append(div)
+    }
 
 }
 
