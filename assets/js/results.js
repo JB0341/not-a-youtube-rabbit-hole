@@ -629,13 +629,13 @@ var yelpData = {
 async function getDocTwo(searchTerm) {
     console.log('BOOMSTICK');
     const searchTermEncodedTwo = encodeURIComponent(searchTerm);
-    
+
     const url2 = `https://health.gov/myhealthfinder/api/v3/topicsearch.json?lang=english&topicId=depression&categoryId=depression&keyword=depression`
 
 }
 
 const optionsTwo = {
-    method:'GET', 
+    method: 'GET',
     headers: {
         'key': ''
     }
@@ -670,10 +670,72 @@ async function getDoc(searchTerm, location) {
 
 }
 
-function getInfo(searchType) {
+// function getInfo(searchType) {
+//     const url = `https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${searchType}`
+//     fetch(url).then(function (response) {
+//     return response.json()
+// }).then(function (data) {
+//     console.log(data)
 
-    const url = `https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${searchType}`
+// })
+// }
 
+function getLog(searchType) {
+    const apiUrl = `https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${searchType}`
+    fetch(apiUrl).then(function (response) {
+        return response.json()
+    }).then(function (data) {
+        console.log(data)
+        const temp = data.main.temp;
+        const wind = data.wind.speed;
+        const humidity = data.main.humidity;
+        const todaysForecast = `
+                <div class="col-md-6">
+                    <div
+                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">World</strong>
+                            <h3 class="mb-0">Featured post</h3>
+                            <div class="mb-1 text-muted">Nov 12</div>
+                            <p class="card-text mb-auto">This is a wider card with supporting text below as a natural
+                                lead-in to additional content.</p>
+                            <a href="#" class="stretched-link">Continue reading</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
+                                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+                                focusable="false">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%"
+                                    fill="#eceeef" dy=".3em">Thumbnail</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-success">Design</strong>
+                            <h3 class="mb-0">Post title</h3>
+                            <div class="mb-1 text-muted">Nov 11</div>
+                            <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to
+                                additional content.</p>
+                            <a href="#" class="stretched-link">Continue reading</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
+                                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+                                focusable="false">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%"
+                                    fill="#eceeef" dy="2px">Thumbnail</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+        `
+        $('#?').append(todaysForecast);
+    })
 }
 
 function renderYelp(result) {
@@ -706,7 +768,7 @@ function renderYelp(result) {
         </div>
         `;
 
-        $('#yelp-container').append(div)
+        $('#yelp-container').append(div);
     }
 
 }
@@ -714,7 +776,7 @@ function renderYelp(result) {
 function init() {
 
     const scores = JSON.parse(localStorage.getItem('scores')) || null;
-    // get clientData from localStorage
+    const localLive = JSON.parse(localStorage.getItem('zip')) || null;
 
 
     if (!scores) {
@@ -723,10 +785,12 @@ function init() {
         return;
     }
 
+
     let hightestScoreType = 'depression';
     let currentTopScore = 0;
 
-    
+
+
     for (const score in scores) {
         const value = scores[score];
         console.log(value, currentTopScore);
@@ -735,7 +799,8 @@ function init() {
             currentTopScore = value;
         }
     }
-            
+
+
     const searchTerm = {
         depression: 'health clinic',
         anxiety: 'health clinic',
@@ -743,12 +808,12 @@ function init() {
         addiction: 'health clinic'
     };
 
-    getDoc(searchTerm[hightestScoreType], '37209')
+    getDoc(searchTerm[hightestScoreType], [localLive])
     getInfo(hightestScoreType);
 };
-    
+
 init();
-    
+
 
 
 //updated code
