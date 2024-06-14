@@ -1,5 +1,5 @@
 // const info = document.querySelector("#");
-var yelpData = {
+/*var yelpData = {
     "SR": 1,
     "SearchQuery": "health clinic",
     "SearchLocation": "New York, NY",
@@ -624,22 +624,8 @@ var yelpData = {
         }
     ]
 }
+*/
 
-
-async function getDocTwo(searchTerm) {
-    console.log('BOOMSTICK');
-    const searchTermEncodedTwo = encodeURIComponent(searchTerm);
-
-    const url2 = `https://health.gov/myhealthfinder/api/v3/topicsearch.json?lang=english&topicId=depression&categoryId=depression&keyword=depression`
-
-}
-
-const optionsTwo = {
-    method: 'GET',
-    headers: {
-        'key': ''
-    }
-}
 
 async function getDoc(searchTerm, location) {
     console.log('hit');
@@ -659,10 +645,10 @@ async function getDoc(searchTerm, location) {
     };
 
     try {
-        // const response = await fetch(url, options);
-        // const result = await response.text();
+        const response = await fetch(url, options);
+        const result = await response.text();
 
-        renderYelp(yelpData);
+        renderYelp(result);
 
     } catch (error) {
         console.error(error);
@@ -670,26 +656,18 @@ async function getDoc(searchTerm, location) {
 
 }
 
-// function getInfo(searchType) {
-//     const url = `https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${searchType}`
-//     fetch(url).then(function (response) {
-//     return response.json()
-// }).then(function (data) {
-//     console.log(data)
 
-// })
-// }
 
-function getLog(searchType) {
-    const apiUrl = `https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${searchType}`
-    fetch(apiUrl).then(function (response) {
-        return response.json()
-    }).then(function (data) {
-        console.log(data)
-        const temp = data.main.temp;
-        const wind = data.wind.speed;
-        const humidity = data.main.humidity;
-        const todaysForecast = `
+    async function getInfo(searchType) {
+        const apiUrl = `https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${searchType}`
+        fetch(apiUrl).then(function (response) {
+            return response.json()
+        }).then(function (data) {
+            console.log(data)
+            const temp = data.main.temp;
+            const wind = data.wind.speed;
+            const humidity = data.main.humidity;
+            const todaysForecast = `
                 <div class="col-md-6">
                     <div
                         class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -734,18 +712,18 @@ function getLog(searchType) {
                     </div>
                 </div>
         `
-        $('#?').append(todaysForecast);
-    })
-}
+            $('#?').append(todaysForecast);
+        })
+    }
 
-function renderYelp(result) {
-    console.log(result);
-    // result.SearchResults
+    function renderYelp(result) {
+        console.log(result);
+        result.SearchResults
 
-    for (let i = 0; i < 3; i++) {
-        const data = result.SearchResults[i];
+        for (let i = 0; i < 3; i++) {
+            const data = result.SearchResults[i];
 
-        const div = `
+            const div = `
         <div class="col">
             <div class="card mb-4 rounded-3 shadow-sm">
                 <div class="card-header py-3">
@@ -768,52 +746,48 @@ function renderYelp(result) {
         </div>
         `;
 
-        $('#yelp-container').append(div);
-    }
-
-}
-
-function init() {
-
-    const scores = JSON.parse(localStorage.getItem('scores')) || null;
-    const localLive = JSON.parse(localStorage.getItem('zip')) || null;
-
-
-    if (!scores) {
-        console.log('no params')
-        location.replace('./index.html');
-        return;
-    }
-
-
-    let hightestScoreType = 'depression';
-    let currentTopScore = 0;
-
-
-
-    for (const score in scores) {
-        const value = scores[score];
-        console.log(value, currentTopScore);
-        if (value > currentTopScore) {
-            hightestScoreType = score;
-            currentTopScore = value;
+            $('#yelp-container').append(div);
         }
+
     }
 
+    function init() {
 
-    const searchTerm = {
-        depression: 'health clinic',
-        anxiety: 'health clinic',
-        ptsd: 'health clinic',
-        addiction: 'health clinic'
+        const scores = JSON.parse(localStorage.getItem('scores')) || null;
+        const localLive = JSON.parse(localStorage.getItem('zip')) || null;
+
+
+        if (!scores) {
+            console.log('no params')
+            location.replace('./index.html');
+            return;
+        }
+
+
+        let hightestScoreType = 'depression';
+        let currentTopScore = 0;
+
+
+
+        for (const score in scores) {
+            const value = scores[score];
+            console.log(value, currentTopScore);
+            if (value > currentTopScore) {
+                hightestScoreType = score;
+                currentTopScore = value;
+            }
+        }
+
+
+        const searchTerm = {
+            depression: 'health clinic',
+            anxiety: 'health clinic',
+            ptsd: 'health clinic',
+            addiction: 'health clinic'
+        };
+
+        getDoc(searchTerm[hightestScoreType], [localLive])
+        getInfo(hightestScoreType);
     };
 
-    getDoc(searchTerm[hightestScoreType], [localLive])
-    getInfo(hightestScoreType);
-};
-
-init();
-
-
-
-//updated code part 2
+    init();
