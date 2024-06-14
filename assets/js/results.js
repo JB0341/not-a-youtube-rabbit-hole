@@ -653,11 +653,11 @@ async function getDoc(searchTerm, location) {
     const options = {
         method: 'GET',
         headers: {
-            'x-rapidapi-key': 'cda199f6bdmshc1adad70235426dp169db6jsn97894b750cf2',
+            'x-rapidapi-key': '02a59a6bd3msh8b98276d625fb31p16f63djsn357e4e8b34f3',
             'x-rapidapi-host': 'yelp-business-api.p.rapidapi.com'
         }
     };
-    
+
     try {
         // const response = await fetch(url, options);
         // const result = await response.text();
@@ -667,10 +667,12 @@ async function getDoc(searchTerm, location) {
     } catch (error) {
         console.error(error);
     }
-    
+
 }
 
 function getInfo(searchType) {
+
+    const url = `https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${searchType}`
 
 }
 getDoc('health clinic', 'new york');
@@ -696,22 +698,40 @@ function renderYelp(result) {
 }
 
 function init() {
-    
-    const urlParams = new URLSearchParams(window.location.search);
-    
-    const searchType = urlParams.get('searchType'); // depression, anxiety, etc
-    const searchLocation = urlParams.get('searchLocation'); // city name or zipcode
-    
-    if (!searchType || !searchLocation) {
-        // window.location.replace('../../index.html');
+
+    const scores = JSON.parse(localStorage.getItem('scores')) || null;
+    // get clientData from localStorage
+
+
+    if (!scores) {
         console.log('no params')
+        location.replace('./index.html');
         return;
     }
 
-    getDoc(searchType, searchLocation)
-    getInfo(searchType);
+    let hightestScoreType = 'depression';
+    let currentTopScore = 0;
+
+    
+    for (const score in scores) {
+        const value = scores[score];
+        console.log(value, currentTopScore);
+        if (value > currentTopScore) {
+            hightestScoreType = score;
+            currentTopScore = value;
+        }
+    }
+            
+    const searchTerm = {
+        depression: 'health clinic',
+        anxiety: 'health clinic',
+        ptsd: 'health clinic',
+        addiction: 'health clinic'
+    };
+
+    getDoc(searchTerm[hightestScoreType], '37209')
+    getInfo(hightestScoreType);
 };
-
+    
 init();
-
-
+    
