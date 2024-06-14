@@ -682,7 +682,7 @@ function renderYelp(result) {
 
     // let info = JSON.parse(localStorage.getItem("?"))|| []
 
-    // ?
+    // ?fixing jquery
 
     //     const ?= `
     //     <div>
