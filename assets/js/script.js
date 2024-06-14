@@ -21,6 +21,10 @@ $(document).ready(function () {
       alert("1-800-273-8255");
    });
 
+   $('#btn2').click(function () {
+      window.open('./assestmentForm.html');
+   });
+
    $('#tabclick').click(function () {
       window.open('https://www.tn.gov/behavioral-health/substance-abuse-services/treatment---recovery/treatment---recovery/prescription-for-success/warning-signs-of-drug-abuse.html', '_blank');
    });
