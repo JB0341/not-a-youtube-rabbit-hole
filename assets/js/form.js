@@ -9,6 +9,7 @@
             lastName: $('#inputLastName4').val().trim(),
             email: $('#inputEmail4').val().trim(),
             phone: $('#phoneNumber4').val().trim(),
+            zip: $('#zipcode4').val().trim(),
         }
 
         localStorage.setItem('clientData', JSON.stringify(data));
