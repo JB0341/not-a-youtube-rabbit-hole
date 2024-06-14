@@ -625,12 +625,30 @@ var yelpData = {
     ]
 }
 
+
+async function getDocTwo(searchTerm) {
+    console.log('BOOMSTICK');
+    const searchTermEncodedTwo = encodeURIComponent(searchTerm);
+    
+    const url2 = `https://health.gov/myhealthfinder/api/v3/topicsearch.json?lang=english&topicId=depression&categoryId=depression&keyword=depression`
+
+}
+
+const optionsTwo = {
+    method:'GET', 
+    headers: {
+        'key': ''
+    }
+}
+
 async function getDoc(searchTerm, location) {
     console.log('hit');
     const searchTermEncoded = encodeURIComponent(searchTerm);
     const locationEncoded = encodeURIComponent(location);
 
     const url = `https://yelp-business-api.p.rapidapi.com/search?query=${searchTermEncoded}&location=${locationEncoded}&page=1`;
+
+
 
     const options = {
         method: 'GET',
