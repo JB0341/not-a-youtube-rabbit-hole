@@ -718,9 +718,16 @@ async function getDoc(searchTerm, location) {
 
     function renderYelp(result) {
         console.log(result);
-        result.SearchResults
+        let docsList = result.SearchResults;
 
-        for (let i = 0; i < 3; i++) {
+        if (!docsList || !docsList.length) {
+            return;
+            // MAYBE PRINT NO DOCS FOUND
+        } else if (docsList > 3) {
+            docsList = docsList.slice(0,3);
+        }
+
+        for (let i = 0; i < docsList.length; i++) {
             const data = result.SearchResults[i];
 
             const div = `
