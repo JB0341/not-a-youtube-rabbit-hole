@@ -8,7 +8,7 @@ async function getDoc(searchTerm, location) {
     const options = {
         method: 'GET',
         headers: {
-            'x-rapidapi-key': 'dc1f6a315cmsh840b48315c1137ep14a547jsn52bc7d78ab12',
+            'x-rapidapi-key': '122586d94dmsh85bd15fe85ef9a2p1e537bjsn37d5cb377140',
             'x-rapidapi-host': 'yelp-business-api.p.rapidapi.com'
         }
         };
