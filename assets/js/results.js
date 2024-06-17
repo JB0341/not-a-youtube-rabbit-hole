@@ -2,7 +2,6 @@
 
 
 async function getDoc(searchTerm, location) {
-    console.log('hit');
     const searchTermEncoded = encodeURIComponent(searchTerm);
     const locationEncoded = encodeURIComponent(location);
     const url = `https://yelp-business-api.p.rapidapi.com/search?query=${searchTermEncoded}&location=${locationEncoded}&page=1`;
@@ -15,19 +14,18 @@ async function getDoc(searchTerm, location) {
         };
         
     function renderYelp(result) {
-        console.log(result);
         let docsList = result.SearchResults;
-    
+        console.log(docsList);
         if (!docsList || !docsList.length) {
             return;
             // MAYBE PRINT NO DOCS FOUND
-        } else if (docsList > 3) {
+        } else if (docsList.length > 3) {
             docsList = docsList.slice(0,3);
             console.log(docsList);
         }
-    
+
         for (let i = 0; i < docsList.length; i++) {
-            const data = result.SearchResults[i];
+            const data = docsList[i];
     
         const helpInfo = `
         <div class="col">
@@ -59,7 +57,7 @@ async function getDoc(searchTerm, location) {
 
     try {
         const response = await fetch(url, options);
-        const result = await response.text();
+        const result = await response.json();
 
         renderYelp(result);
 
@@ -84,20 +82,20 @@ async function getInfo(searchType) {
         return response.json()
     }).then(function (data) {
         console.log(data);
-        const resources = data.list || [];
+        const resources = data.Result.Resources.Resource || [];
+        console.log(resources);
 
         for (let i = 0; i < resources.length; i = i + 3) {
-        const resource = resources[i];
-        console.log(resource);
+            const resource = resources[i];
+            console.log(resource);
 
-        const topic = resource.resource.accessibleVersion;
-        const dailyRead = `
-        <div>
-            <h3>Title</h3>
-            <p>${topic}</p>
-        </div>
-        `
-        $('#med-container').append(dailyRead); 
+            const dailyRead = `
+            <div>
+                <h3>${resource.Title}</h3>
+                <p>${resource.Sections.section[0].Content}</p>
+            </div>
+            `
+            $('#med-container').append(dailyRead); 
         
         }
 
@@ -110,7 +108,7 @@ async function getInfo(searchType) {
 function init() {
 
     const scores = JSON.parse(localStorage.getItem('scores')) || null;
-    const localLive = JSON.parse(localStorage.getItem('zip')) || null;
+    const localLive = JSON.parse(localStorage.getItem('clientData')).zip || null;
     console.log('BOOMSAUCE');
 
 
@@ -149,7 +147,7 @@ function init() {
         addiction: 'health clinic',    
     };
 
-    getDoc(searchTerm[hightestScoreType], [localLive])
+    getDoc(searchTerm[hightestScoreType], localLive)
     getInfo(hightestScoreType);
 };
 
