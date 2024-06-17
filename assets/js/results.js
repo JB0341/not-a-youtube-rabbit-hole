@@ -639,7 +639,7 @@ async function getDoc(searchTerm, location) {
     const options = {
         method: 'GET',
         headers: {
-            'x-rapidapi-key': '02a59a6bd3msh8b98276d625fb31p16f63djsn357e4e8b34f3',
+            'x-rapidapi-key': 'dc1f6a315cmsh840b48315c1137ep14a547jsn52bc7d78ab12',
             'x-rapidapi-host': 'yelp-business-api.p.rapidapi.com'
         }
     };
@@ -664,13 +664,13 @@ const nameId = localStorage.getItem("name1");
 
 
 
-//?-- worked on for hours could not get the infomation to load?
+
 async function getInfo(searchType) {
     const apiUrl = `https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${searchType}`
     fetch(apiUrl).then(function (response) {
         return response.json()
     }).then(function (data) {
-        console.log(data)
+        console.log(data);
         const health = data.healthTitle;
         const published = data.published
         const infomation = data.infomation;
@@ -718,7 +718,7 @@ async function getInfo(searchType) {
                     </div>
                 </div>
         `
-        $('#?').append(todaysForecast);
+        ('#med-container').append(dailyRead);
     })
 }
 
@@ -737,7 +737,7 @@ async function getInfo(searchType) {
         for (let i = 0; i < docsList.length; i++) {
             const data = result.SearchResults[i];
 
-        const div = `
+        const helpInfo = `
         <div class="col">
             <div class="card mb-4 rounded-3 shadow-sm">
                 <div class="card-header py-3">
@@ -760,7 +760,7 @@ async function getInfo(searchType) {
         </div>
         `;
 
-        $('#yelp-container').append(div);
+        $('#yelp-container').append(helpInfo);
     }
 
 }
@@ -768,7 +768,8 @@ async function getInfo(searchType) {
 function init() {
 
     const scores = JSON.parse(localStorage.getItem('scores')) || null;
-    const localLive = JSON.parse(localStorage.getItem('zips')) || null;
+    const localLive = JSON.parse(localStorage.getItem('zip')) || null;
+    console.log('BOOMSAUCE');
 
 
     if (!scores) {
@@ -779,7 +780,6 @@ function init() {
 
 
     let hightestScoreType = 'depression';
-    // let findLocalZip = "37209";
     let currentTopScore = 0;
 
 
@@ -793,10 +793,6 @@ function init() {
         }
     }
 
-    // for (const zip in zips) {
-    //     const value = zips[zip];
-    //     console.log(findLocalZip);
-    // }
 
     const searchTerm = {
         depression: 'health clinic',
