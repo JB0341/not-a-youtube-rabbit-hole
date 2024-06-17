@@ -722,12 +722,20 @@ async function getInfo(searchType) {
     })
 }
 
-function renderYelp(result) {
-    console.log(result);
-    result.SearchResults
 
-    for (let i = 0; i < 3; i++) {
-        const data = result.SearchResults[i];
+    function renderYelp(result) {
+        console.log(result);
+        let docsList = result.SearchResults;
+
+        if (!docsList || !docsList.length) {
+            return;
+            // MAYBE PRINT NO DOCS FOUND
+        } else if (docsList > 3) {
+            docsList = docsList.slice(0,3);
+        }
+
+        for (let i = 0; i < docsList.length; i++) {
+            const data = result.SearchResults[i];
 
         const div = `
         <div class="col">
