@@ -656,34 +656,41 @@ async function getDoc(searchTerm, location) {
 
 }
 
+localStorage.setItem("overall1", "");
+const scoreId = localStorage.getItem("overall1");
+
+localStorage.setItem("name1", "");
+const nameId = localStorage.getItem("name1");
 
 
-    async function getInfo(searchType) {
-        const apiUrl = `https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${searchType}`
-        fetch(apiUrl).then(function (response) {
-            return response.json()
-        }).then(function (data) {
-            console.log(data)
-            const temp = data.main.temp;
-            const wind = data.wind.speed;
-            const humidity = data.main.humidity;
-            const todaysForecast = `
+
+//?-- worked on for hours could not get the infomation to load?
+async function getInfo(searchType) {
+    const apiUrl = `https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${searchType}`
+    fetch(apiUrl).then(function (response) {
+        return response.json()
+    }).then(function (data) {
+        console.log(data)
+        const health = data.healthTitle;
+        const published = data.published
+        const infomation = data.infomation;
+        const community = data.community;
+        const daliyRead = `
                 <div class="col-md-6">
                     <div
                         class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div class="col p-4 d-flex flex-column position-static">
-                            <strong class="d-inline-block mb-2 text-primary">World</strong>
-                            <h3 class="mb-0">Featured post</h3>
-                            <div class="mb-1 text-muted">Nov 12</div>
-                            <p class="card-text mb-auto">This is a wider card with supporting text below as a natural
-                                lead-in to additional content.</p>
+                            <strong class="d-inline-block mb-2 text-primary">Infromation</strong>
+                            <h3 class="mb-0">${data.published}</h3>
+                            <div class="mb-1 text-muted">${data.infomation}</div>
+                            <p class="card-text mb-auto">${data.community}</p>
                             <a href="#" class="stretched-link">Continue reading</a>
                         </div>
                         <div class="col-auto d-none d-lg-block">
                             <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
                                 role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
                                 focusable="false">
-                                <title>Placeholder</title>
+                                <title>${data.healthTitle}</title>
                                 <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%"
                                     fill="#eceeef" dy=".3em">Thumbnail</text>
                             </svg>
@@ -693,18 +700,17 @@ async function getDoc(searchTerm, location) {
                 <div class="col-md-6">
                     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div class="col p-4 d-flex flex-column position-static">
-                            <strong class="d-inline-block mb-2 text-success">Design</strong>
-                            <h3 class="mb-0">Post title</h3>
-                            <div class="mb-1 text-muted">Nov 11</div>
-                            <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to
-                                additional content.</p>
+                            <strong class="d-inline-block mb-2 text-primary">Infromation</strong>
+                            <h3 class="mb-0">${data.published}</h3>
+                            <div class="mb-1 text-muted">${data.infomation}</div>
+                            <p class="card-text mb-auto">${data.community}</p>
                             <a href="#" class="stretched-link">Continue reading</a>
                         </div>
                         <div class="col-auto d-none d-lg-block">
                             <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
                                 role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
                                 focusable="false">
-                                <title>Placeholder</title>
+                                <title>${data.healthTitle}</title>
                                 <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%"
                                     fill="#eceeef" dy="2px">Thumbnail</text>
                             </svg>
@@ -712,9 +718,10 @@ async function getDoc(searchTerm, location) {
                     </div>
                 </div>
         `
-            $('#?').append(todaysForecast);
-        })
-    }
+        $('#?').append(todaysForecast);
+    })
+}
+
 
     function renderYelp(result) {
         console.log(result);
@@ -730,7 +737,7 @@ async function getDoc(searchTerm, location) {
         for (let i = 0; i < docsList.length; i++) {
             const data = result.SearchResults[i];
 
-            const div = `
+        const div = `
         <div class="col">
             <div class="card mb-4 rounded-3 shadow-sm">
                 <div class="card-header py-3">
@@ -753,48 +760,53 @@ async function getDoc(searchTerm, location) {
         </div>
         `;
 
-            $('#yelp-container').append(div);
-        }
-
+        $('#yelp-container').append(div);
     }
 
-    function init() {
+}
 
-        const scores = JSON.parse(localStorage.getItem('scores')) || null;
-        const localLive = JSON.parse(localStorage.getItem('zip')) || null;
+function init() {
+
+    const scores = JSON.parse(localStorage.getItem('scores')) || null;
+    const localLive = JSON.parse(localStorage.getItem('zips')) || null;
 
 
-        if (!scores) {
-            console.log('no params')
-            location.replace('./index.html');
-            return;
+    if (!scores) {
+        console.log('no params')
+        location.replace('./index.html');
+        return;
+    }
+
+
+    let hightestScoreType = 'depression';
+    // let findLocalZip = "37209";
+    let currentTopScore = 0;
+
+
+
+    for (const score in scores) {
+        const value = scores[score];
+        console.log(value, currentTopScore);
+        if (value > currentTopScore) {
+            hightestScoreType = score;
+            currentTopScore = value;
         }
+    }
 
+    // for (const zip in zips) {
+    //     const value = zips[zip];
+    //     console.log(findLocalZip);
+    // }
 
-        let hightestScoreType = 'depression';
-        let currentTopScore = 0;
-
-
-
-        for (const score in scores) {
-            const value = scores[score];
-            console.log(value, currentTopScore);
-            if (value > currentTopScore) {
-                hightestScoreType = score;
-                currentTopScore = value;
-            }
-        }
-
-
-        const searchTerm = {
-            depression: 'health clinic',
-            anxiety: 'health clinic',
-            ptsd: 'health clinic',
-            addiction: 'health clinic'
-        };
-
-        getDoc(searchTerm[hightestScoreType], [localLive])
-        getInfo(hightestScoreType);
+    const searchTerm = {
+        depression: 'health clinic',
+        anxiety: 'health clinic',
+        ptsd: 'health clinic',
+        addiction: 'health clinic'
     };
 
-    init();
+    getDoc(searchTerm[hightestScoreType], [localLive])
+    getInfo(hightestScoreType);
+};
+
+init();

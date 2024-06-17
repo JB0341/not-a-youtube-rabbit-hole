@@ -84,8 +84,8 @@
                 ptsd: avgPtsd
             };
             
-            localStorage.setItem('scores', JSON.stringify(scores));
 
+            localStorage.setItem('scores', JSON.stringify(scores));
 
             // move user to results page with the two params
             const queryString = `./results.html`;
