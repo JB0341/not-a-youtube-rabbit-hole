@@ -136,7 +136,7 @@ function init() {
         <p>${hightestScoreType}</p>
         <p>${currentTopScore}</p>
         </div>`
-        $('#yelp-container').append(testResults);
+        $('#infoRabbit').append(testResults);
     }
 
 
