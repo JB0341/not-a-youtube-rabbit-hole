@@ -6,6 +6,8 @@ Levare
 
 Team - Rabbit Hole  + Shaketa, Jermey, & Phillip 
 
+[Powerpoint](<./assets/images/Levare%20group%20project.pptx>)
+
         1. Purpose of Project
             a. We wanted to bring awareness to social issues regrading addiction
             b. Came up with a concept website on how we could establish useful information
@@ -31,3 +33,4 @@ Team - Rabbit Hole  + Shaketa, Jermey, & Phillip
 
 
 [Github Repositories:](https://github.com/JB0341/not-a-youtube-rabbit-hole)
+[Github Deployed Line:](https://jb0341.github.io/not-a-youtube-rabbit-hole/index.html)
